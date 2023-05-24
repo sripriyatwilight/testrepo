@@ -1,0 +1,82 @@
+<div class="login-sec">
+  <div class="signin_container2">
+
+    <div class="signin_box2">
+      <div class="">
+        <div class="zoho_logo ZohoHome"></div>
+          <div class="signin_head">
+            <div class="service_name"> <span> Welcome Back, Please log into you account</span></div>
+
+            <div class="my-5 invalid-text">
+              <span *ngIf="showSection1">User does not exist</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:30px;" class="d-grid gap-2">
+            <button class="tw_btn-google " href="/" role="button" style="text-transform:none">
+              <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+              Signin with Google
+            </button>
+          </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+          <div class="or-sec ">
+            <span>&ndash; &ndash; </span> Or<span>&ndash; &ndash;</span>
+          </div>
+
+
+          <div class="form-group mt-5 p-field">
+            <label>Email</label>
+            <input type="email" class="outline-none text-lg w-full" formControlName="email"
+            [ngClass]="{'invalid-border': passwordFormControl['email'].errors?.['required'] && submitted }"
+            [ngClass]="{'invalid-border': passwordFormControl['email'].errors?.['email'] }"
+            [ngClass]="{'invalid-border': passwordFormControl['email'].errors && passwordFormControl['email'].touched}"
+            [ngClass]="{'valid-border': passwordFormControl['email'].valid}"
+           >
+            <div class="my-3 invalid-text">
+              <span *ngIf="
+                      passwordFormControl['email'].invalid &&
+                      (passwordFormControl['email'].touched || submitted)
+                    ">
+                <span *ngIf="passwordFormControl['email'].errors?.['required']">Email is required.</span>
+                <span *ngIf="passwordFormControl['email'].errors?.['email'] ">Please enter a valid email address.</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group mt-5">
+            <label for="password" class="flex "> Password </label>
+            <input type="password"  class="outline-none text-lg w-full" formControlName="password"
+
+              [ngClass]="{'invalid-border': passwordFormControl['password'].invalid && passwordFormControl['password'].touched && passwordFormControl['password'].errors?.['required'] }"
+              [ngClass]="{'invalid-border': passwordFormControl['password'].errors  && submitted }"
+              [ngClass]="{'invalid-border': passwordFormControl['password'].invalid }"
+              [ngClass]="{'invalid-border': passwordFormControl['password'].errors?.['pattern']}"
+              [ngClass]="{'valid-border': passwordFormControl['password'].valid }"
+            >
+            <div class="my-3  invalid-text">
+              <div *ngIf="
+                (passwordFormControl['password'].touched || submitted) &&
+                  passwordFormControl['password'].invalid
+              ">
+                <span>password is required</span>
+              </div>
+              <span *ngIf="passwordFormControl['password'].hasError('pattern')">
+                Password must contain at least one uppercase, one lowercase, one
+                numeric digit and one special character.
+              </span>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 mt-5">
+            <button class="tw_btn-login" type="button" type="submit"> SIGN UP</button>
+          </div>
+
+          <div id="signuplink">Have a Lms Account? <p-link class="cursor-pointer text-primary-700"
+              routerLink="/login">Sign in</p-link></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

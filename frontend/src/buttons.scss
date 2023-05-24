@@ -1,0 +1,11 @@
+.tw_button {
+  @include button-styles($blue, 16px, white);
+}
+
+.tw_btn-google {
+  @include button-styles($blue, 14px, white);
+}
+
+.tw_btn-login {
+  @include button-styles($green, 16px, white);
+}

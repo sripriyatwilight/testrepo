@@ -1,0 +1,42 @@
+<div class="login-sec">
+  <div class="signin_container3">
+
+    <div class="signin_box3">
+        <div class="">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="zoho_logo ZohoHome"></div>
+
+            <div class="signin_head">
+              <div class="service_name"> <span>Enter your registered email address</span></div>
+              <div class="my-5 invalid-text"  >
+                <span *ngIf="showSection1" >User does not exist</span>
+              </div>
+            </div>
+            <div class="form-group mt-5 p-field">
+              <label>Email</label>
+              <input type="email" class="outline-none text-lg w-full"
+                [ngClass]="{'invalid-border': loginFormControl['email'].errors?.['email'] || loginFormControl['email'].errors?.['required']}"
+                [ngClass]="{'invalid-border': loginFormControl['email'].errors && submitted }"
+                [ngClass]="{'invalid-border': loginFormControl['email'].invalid && loginFormControl['email'].touched }"
+                [ngClass]="{'valid-border': loginFormControl['email'].valid}"
+                formControlName="email">
+              <div class="my-3 invalid-text">
+                <span *ngIf="
+                        loginFormControl['email'].invalid &&
+                        (loginFormControl['email'].touched || submitted)
+                      ">
+                  <span *ngIf="loginFormControl['email'].errors?.['required']">Email is required.</span>
+                  <span *ngIf="loginFormControl['email'].errors?.['email'] ">Please enter a valid email address.</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 pt-3">
+              <button class="tw_btn-login" type="button" type="submit"> Reset Password</button>
+            </div>
+            <!-- <div id="signuplink">Have a Lms Account? <p-link class="cursor-pointer text-primary-700" routerLink="/login">Back to login</p-link></div> -->
+          </form>
+        </div>
+      </div>
+  </div>
+  </div>

@@ -1,0 +1,8 @@
+<p-carousel [value]="images" [showNavigators]="false"  [autoplayInterval]="6000">
+  <ng-template let-image pTemplate="item" let-text>
+      <div class="h-auto">
+        <img src={{image.img}} alt="{{image}}" class="w-full h-35">
+        <!-- <p>{{image.text}}</p> -->
+      </div>
+  </ng-template>
+</p-carousel>

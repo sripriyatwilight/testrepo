@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import '~primeicons/primeicons.css';
+@import "node_modules/primeflex/primeflex.css";
+@import "/node_modules/primeflex/primeflex.css";
+@import "primeflex/primeflex.css";
+@import "/node_modules/primeflex/primeflex.css";
+@import "_common.scss";
+@import "_fonts.scss";
+@import "_variables.scss";
+@import "login.scss";
+@import "buttons.scss";
+@font-face {
+  font-family: 'ZohoPuvi';
+  src: url('../src/assets/fonts/ZohoPuvi/OpenType-TT/ZohoPuviRegular.ttf') format('truetype');
+}
+body {
+  font-family: 'ZohoPuvi', Georgia !important;
+  // font-weight: 400;
+}
+
+.btn{
+  border-radius: 0;
+}
+
+.option{
+  background-color:#cadaee;
+  font-size:20px;
+  padding:10px;
+  margin:3px;
+}
+  #quiz .options input[type=checkbox] {
+      height:22px;
+      width:22px;
+  }
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.result-question{
+  background-color:#eee;
+  margin:4px;
+  padding:6px;
+}
+
+@media only screen and (max-width: 480px) {
+  h1,.h1{
+      font-size:22px;
+  }
+  h2,.h2{
+      font-size:20px;
+  }
+  h3,.h3{
+      font-size:18px;
+  }
+  .option {
+      font-size: 16px;
+      padding: 6px;
+  }
+}
+
+
+
+
+.w-100{
+  width: 100rem;
+}
+.w-50{
+  width: 50rem;
+}
+
+.w-70{
+  width: 70rem;
+}
+.h-35{
+  height: 35rem;
+}
+.w-fit{
+  width: fit-content;
+}
+.h-fit{
+  height: fit-content;
+}
+.p-relative{
+  position: relative;
+}
+.p-absolute{
+  position: absolute;
+}
+// position bottom
+.p-b-3{
+  bottom: 3rem;
+}
+// position top
+.p-t-1{
+  top: 1rem;
+}
+.p-t-5{
+  top: 5rem;
+}
+.p-t-10{
+  top: 10rem;
+}
+.p-t-1p {
+  top:10px;
+}
+.p-x-4 {
+  padding: 0 4rem;
+}
+
+.border-bottom-4{
+  border-bottom: 4px;
+}
+.border-x-none-12 {
+  border-left-width: 12rem !important;
+  border-left-style: none;
+  border-right-width: 12rem !important;
+  border-right-style: none;
+
+}
+.border-x-color-none {
+border-right-color: unset !important;
+border-left-color: unset !important;
+}
+// text dynamic part
+//font-size,font-weight,color
+.title {
+  @include font-styles($color:$black);
+
+}
+

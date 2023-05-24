@@ -1,0 +1,37 @@
+<ng-container  *ngIf="!isQuizCompleted">
+  <div class="question">
+    <h1>Total {{points}} Points</h1>
+    <h1>Question {{currentQuestion+1}} of {{questionList.length}}</h1>
+    <h1>Time: {{counter}} Sec</h1>
+    <p>Welcome {{name}}</p> <!-- string interpoltion-->
+    <p>{{questionList[currentQuestion]?.questionText}}</p>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!isQuizCompleted">
+  <div class="options">
+    <ul *ngFor="let option of questionList[currentQuestion]?.options">
+      <!-- pass in two thing 1.current ques and 2.option -->
+      <li (click)="answer(currentQuestion+1,option)">
+        <!-- 1.appChangeBg this Directive created using cmd (ng g d change-bg )
+          2.pass parametrer isCorrect
+          3.that will receive from options from json data
+        -->
+        <div appChangeBg [isCorrect]="option.correct" class="card">
+          {{option.text}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button [disabled]="currentQuestion===0" (click)="previousQuestion()" > Previous</button>
+  <button (click)="resetQuiz()" > Reset Quiz</button>
+  <button (click)="nextQuestion()" > Next</button>
+</ng-container>
+
+<ng-container *ngIf="!isQuizCompleted">
+  <h1>Total Question Attempted {{questionList.length}}</h1>
+  <h1>wrong ans {{inCorrectAnswer}}</h1>
+  <h1>Correct ans  {{ correctAnswer }}</h1>
+  <h1>your score {{ points}} </h1>
+
+</ng-container>

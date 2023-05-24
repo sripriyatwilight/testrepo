@@ -1,0 +1,122 @@
+.login-sec{
+  @include dimensions($height:100vh);
+  @include bg-image($path:'images/bg-img2.png');
+}
+
+@mixin signin_container {
+  @include center-abs-x;
+  min-height: 520px;
+  background-color: #fff;
+  box-shadow: 0px 2px 30px #ccc6;
+  margin-top: 5%;
+  overflow: hidden;
+}
+
+.signin_container1 {
+  @include dimensions(70rem , fit-content);
+  @include signin_container;
+}
+.signin_container2 {
+  @include dimensions(38rem , fit-content);
+  @include signin_container;
+
+}
+
+.signin_container3 {
+  @include dimensions(38rem , fit-content);
+  @include signin_container;
+  min-height: unset;
+
+}
+
+@mixin signin_box {
+  min-height: 520px;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  transition: all .1s ease-in-out;
+  float: left;
+  overflow-y: auto;
+  display: table-cell;
+  border-right: 2px solid #f1f1f1;
+}
+
+.signin_box1 {
+  @include padding(58px) ;
+  @include dimensions ($width:39rem);
+  @include signin_box;
+}
+
+.signin_box2 {
+  @include padding(58px) ;
+  @include dimensions ($height:auto);
+  @include signin_box;
+}
+
+.signin_box3 {
+  @include padding(58px) ;
+  @include dimensions ($height:auto);
+  @include signin_box;
+  min-height: unset ;
+}
+
+.zoho_logo {
+  display: block;
+  margin-bottom: 20px;
+  @include dimensions(auto , 40px);
+  @include bg-image('images/logo.png', auto 100%, no-repeat, cover);
+
+  // background-image: url('./assets/images/');
+}
+
+.signin_head {
+  display: block;
+  color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 30px;
+    transition: all .1s ease-in-out;
+}
+
+.service_name {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  // color: red;
+  font-weight: 400;
+}
+
+
+#signuplink {
+  @include dimensions(100%, auto);
+  @include font-styles($align:center);
+  display: inline-block;
+  margin: 30px auto;
+  line-height: 20px;
+  color: #555;
+}
+
+.invalid-text {
+  // $size:$s, $weight:$normal, $align:start, $color:$gray
+  @include font-styles($xs,400,start,$red);
+}
+.valid-text {
+  @include font-styles($xs,400,start,$green);
+}
+
+input {
+  @include input-border-bottom(2px, solid, $orange );
+  // @include input-placeholder(red);
+}
+.valid-border{
+  @include input-border-bottom(2px, solid, $blue);
+
+}
+.invalid-border{
+  @include input-border-bottom(2px, solid, $red);
+}
+
+.or-sec{
+  @include center(relative,fit-content)
+}

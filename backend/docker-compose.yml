@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  local:
+    env_file: ./env/.env.localhost
+    environment:
+      - NPM_TOKEN=$NPM_TOKEN
+    build:
+      dockerfile: Dockerfile.local
+    ports:
+      - '8080:8080'
+    stdin_open: true
+    tty: true
+    container_name: seo-app-release_0.0.6
+    extra_hosts:
+      - 'gateway.docker.internal:192.168.56.1'

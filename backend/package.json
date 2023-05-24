@@ -1,0 +1,81 @@
+{
+  "name": "express-rest-sequelize-boilerplate",
+  "version": "1.0.0",
+  "description": "Create a Node.js Express RESTful APIs using sequelize",
+  "author": "Fernandus <fernandusfero@gmail.com>",
+  "license": "MIT",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=16.13.2"
+  },
+  "scripts": {
+    "start:migrate": "SET NODE_ENV=local&& npx sequelize-cli db:migrate --name 20230513110812-create-permission.js",
+    "migrate:linux:local": "export NODE_ENV=local&& npx sequelize-cli db:migrate",
+    "migrate:windows:local": "SET NODE_ENV=local&& npx sequelize-cli db:migrate",
+    "migrate:windows:dev": "SET NODE_ENV=dev&& npx sequelize-cli db:migrate",
+    "migrate:linux:dev": "export NODE_ENV=dev&& npx sequelize-cli db:migrate",
+    "migrate:windows:prod": "SET NODE_ENV=prod&& npx sequelize-cli db:migrate",
+    "migrate:linux:prod": "export NODE_ENV=prod&& npx sequelize-cli db:migrate",
+    "seed:linux:local": "export NODE_ENV=local&& npx sequelize-cli db:seed:all",
+    "seed:windows:local": "SET NODE_ENV=local&& npx sequelize-cli db:seed:all",
+    "start:windows:local": "SET NODE_ENV=local&& nodemon src/server.js",
+    "start:windows:dev": "SET NODE_ENV=dev&& pm2 start src/server.js",
+    "start:windows:prod": "SET NODE_ENV=prod&& pm2 start src/server.js",
+    "start:linux:local": "export NODE_ENV=local&& nodemon src/server.js",
+    "start:linux:dev": "export NODE_ENV=dev&& pm2 start src/server.js",
+    "start:linux:prod": "export NODE_ENV=prod&& pm2 start src/server.js",
+    "start": "nodemon src/server.js NODE_ENV=dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/fernandusfero/nodesample.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "node.js",
+    "nodejs",
+    "rest",
+    "api",
+    "sequelize",
+    "mysql"
+  ],
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^7.0.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.19.1",
+    "custom-env": "^2.0.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.2",
+    "http-status": "^1.6.2",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "lint-staged": "^12.4.0",
+    "mongoose": "^6.8.4",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.9.2",
+    "pg": "^8.8.0",
+    "save": "^2.4.0",
+    "sequelize": "^6.19.0",
+    "winston": "^3.5.1",
+    "winston-daily-rotate-file": "^4.6.1"
+  }
+}

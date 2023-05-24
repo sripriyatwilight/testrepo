@@ -1,0 +1,70 @@
+{
+  "menuSidebar": [
+    {
+      "link_name": "Dashboard",
+      "link": "/dashboard",
+      "icon": "bx bx-grid-alt",
+      "sub_menu": []
+    },
+    {
+      "link_name": "My Cources",
+      "link": "/",
+      "icon": "bx bx-collection",
+      "sub_menu": [
+        {
+          "link_name": "HTML & CSS",
+          "link": "/html-n-css"
+        },
+        {
+          "link_name": "JavaScript",
+          "link": "/javascript"
+        },
+        {
+          "link_name": "PHP & MySQL",
+          "link": "/php-n-mysql"
+        }
+      ]
+    },
+    {
+      "link_name": "Quiz library",
+      "link": null,
+      "icon": "bx bx-book-alt",
+      "sub_menu": [
+        {
+          "link_name": "Quiz",
+          "link": "/dashboard/quiz"
+        },
+        {
+          "link_name": "Quiz2",
+          "link": "/dashboard/quiz2"
+        },
+        {
+          "link_name": "Login Form",
+          "link": "/posts/login-form"
+        },
+        {
+          "link_name": "Card Design",
+          "link": "/posts/card-design"
+        }
+      ]
+    },
+    {
+      "link_name": "My Results",
+      "link": "/dashboard",
+      "icon": "bx bx-pie-chart-alt-2",
+      "sub_menu": []
+    },
+    {
+      "link_name": "Setting",
+      "link": "/dashboard",
+      "icon": "bx bx-cog",
+      "sub_menu": []
+    },
+    {
+      "link_name": "Leaderboard",
+      "link": "/dashboard",
+      "icon": "bx bx-cog",
+      "sub_menu": []
+    }
+  ]
+}

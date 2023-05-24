@@ -1,0 +1,106 @@
+@mixin button-styles($bg-color, $font-size: $m, $font-color) {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $bg-color;
+  color: $font-color;
+  font-size: $font-size;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+  &:active {
+    background-color: lighten($bg-color, 5%);
+  }
+}
+
+// Input
+@mixin input-border-bottom($width: 2px, $style: solid, $color: $orange) {
+  border: $width $style $color;
+  border-top: unset;
+  border-right: unset;
+  border-left: unset;
+}
+
+@mixin input-focus($color) {
+  &:focus {
+    outline: none;
+    border-bottom-color: $color;
+    box-shadow: 0 0 0 2px $color;
+  }
+}
+
+@mixin input-placeholder($color) {
+  &::placeholder {
+    color: $color;
+  }
+}
+
+// background images
+@mixin bg-image($path, $size: cover, $repeat: no-repeat, $position: center) {
+  background-image: url("./assets/#{$path}");
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+// width height
+@mixin dimensions($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+// center
+@mixin center-horizontal-relative {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+// dynamic center
+@mixin center-abs-x {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  // width: $width;
+}
+@mixin center-rel-x {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  // width: $width;
+}
+@mixin center($position: absolute, $width: 100%) {
+  position: $position;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: $width;
+}
+
+@mixin center-xy($position) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width;
+  height: $height;
+}
+
+@mixin padding($padding: 10px) {
+  padding: $padding;
+}
+
+@mixin padding-x($x: 10px) {
+  padding-left: $x;
+  padding-right: $x;
+}
+
+@mixin padding-y($y: 10px) {
+  padding-top: $y;
+  padding-bottom: $y;
+}

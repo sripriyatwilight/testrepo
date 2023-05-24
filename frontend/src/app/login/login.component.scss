@@ -1,0 +1,59 @@
+@import "../../styles.scss";
+
+:host ::ng-deep{
+    .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+      width: 8px;
+    }
+}
+
+.rightside_box {
+  @include dimensions (31rem,auto);
+  float: right;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.banner1_img {
+  @include dimensions(100% , 23rem);
+  display: block;
+  margin: auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.banner1_heading, .banner1_content, .banner1_href {
+  display: block;
+  line-height: 20px;
+  text-align: center;
+}
+
+.banner1_heading {
+  @include font-styles($weight:600,$align:center);
+  margin-top: 20px;
+  font-family: 'ZohoPuvi',Georgia;
+}
+
+.banner1_content {
+  @include font-styles($align:center);
+  margin-top: 10px;
+  font-family: 'ZohoPuvi',Georgia;
+
+}
+
+.banner1_href {
+  @include dimensions(max-content , 36px);
+  @include font-styles($weight:600,$color:$lightBlue);
+  @include padding-y(10px);
+  @include padding-x(8px);
+  max-width: 160px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #ECF7FE;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+

@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+@mixin font-styles($size:$s, $weight:$normal, $align:start, $color:$gray){
+  font-size: $size;
+  font-weight: $weight;
+  text-align: $align;
+  color: $color;
+}
+
+
+.title {
+  @include font-styles($color:$black);
+}
+
+.invalid-text {
+  @include font-styles($size:$xs);
+}

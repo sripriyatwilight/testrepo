@@ -1,0 +1,11 @@
+
+# Dependency directories
+node_modules/
+/package-lock.json
+
+# custom environment variables file
+#env/
+#!env/.env*.example
+
+# logs
+src/logs/

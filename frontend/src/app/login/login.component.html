@@ -1,0 +1,103 @@
+<div class="login-sec">
+  <div class="signin_container1">
+    <div class="signin_box1">
+      <div class="zoho_logo ZohoHome"></div>
+      <div class="service_name">
+        <span>
+          Welcome Back, Please log into you account
+        </span>
+      </div>
+      <div class="d-grid gap-2 mt-3">
+        <button class="tw_btn-google " href="/" role="button" style="text-transform:none">
+          <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png">
+          Login with Google
+        </button>
+      </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="signin_head">
+            <div class="my-5 invalid-text">
+              <span *ngIf="showSection1">User does not exist</span>
+            </div>
+          </div>
+          <div class="or-sec">&ndash; &ndash; Or&ndash; &ndash;</div>
+          <div class="form-group mt-5 p-field">
+            <label>Email</label>
+            <input type="email" class="outline-none text-lg w-full" formControlName="email"
+            [ngClass]="{'invalid-border': loginFormControl['email'].errors?.['required'] && submitted }"
+            [ngClass]="{'invalid-border': loginFormControl['email'].errors?.['email'] }"
+            [ngClass]="{'invalid-border': loginFormControl['email'].errors && loginFormControl['email'].touched}"
+            [ngClass]="{'valid-border': loginFormControl['email'].valid}"
+           >
+            <div class="my-3 invalid-text">
+              <span *ngIf="
+                      loginFormControl['email'].invalid &&
+                      (loginFormControl['email'].touched || submitted)
+                    ">
+                <span *ngIf="loginFormControl['email'].errors?.['required']">Email is required.</span>
+                <span *ngIf="loginFormControl['email'].errors?.['email'] ">Please enter a valid email address.</span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group mt-5">
+            <label for="password" class="flex ">
+              Password
+            </label>
+            <input type="password"  class="outline-none text-lg w-full" formControlName="password"
+
+              [ngClass]="{'invalid-border': loginFormControl['password'].invalid && loginFormControl['password'].touched && loginFormControl['password'].errors?.['required'] }"
+              [ngClass]="{'invalid-border': loginFormControl['password'].errors  && submitted }"
+              [ngClass]="{'valid-border': loginFormControl['password'].valid }"
+            >
+            <div class="my-3  invalid-text">
+              <span *ngIf="
+                (loginFormControl['password'].touched || submitted) &&
+                loginFormControl['password'].errors &&
+                loginFormControl['password'].invalid
+              ">Password is required</span>
+            </div>
+          </div>
+          <div class="grid justify-content-between align-items-baseline my-5 m-0">
+            <span class="text-primary-700">
+              <p-checkbox [binary]="true" formControlName="checked" inputId="binary"></p-checkbox>
+              Remember
+            </span>
+            <span>
+              <p-link class="cursor-pointer text-primary-700" routerLink="/forgot">
+                Forgot password?
+              </p-link>
+            </span>
+          </div>
+          <!-- login button -->
+          <div class="d-grid gap-2">
+            <button class="tw_btn-login" type="button" type="submit">
+              Login
+            </button>
+          </div>
+
+          <div id="signuplink">
+            Don't have a Lms account?
+            <p-link class="cursor-pointer text-primary-700" routerLink="/register">
+              Sign Up Now
+            </p-link>
+          </div>
+        </form>
+    </div>
+    <div class="rightside_box">
+      <p-carousel [value]="images" [showNavigators]="false" [autoplayInterval]="6000">
+        <ng-template let-image pTemplate="item" let-text>
+          <div class="banner1_img " style="background-image: url('../{{image.img}}');">
+          </div>
+          <div class="banner1_heading ">{{image.heading}}</div>
+          <div class="banner1_content">
+            Secure online accounts with OneAuth 2FA. Back up OTP secrets and never lose access to your accounts.
+          </div>
+          <a href="#" class="btn btn-primary btn-lg banner1_href" tabindex="-1" role="button" aria-disabled="true"
+            style="margin-bottom: 22px">
+            Primary link
+          </a>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>
