@@ -33,5 +33,5 @@ sequelize
     });
   })
   .catch(() => {
-    logger.info('DB Connection Error ');
+    logger.info('DB Connection Error');
   });
