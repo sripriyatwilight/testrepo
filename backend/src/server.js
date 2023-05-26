@@ -12,7 +12,6 @@ const { logger, httpLogger, performanceLogger } = require('./config/logger/morga
 const userRoutes = require('./routes/v1/index');
 
 const app = express();
-
 app.use(httpLogger);
 app.use(performanceLogger);
 
@@ -27,7 +26,7 @@ app.use('/api/v1', userRoutes);
 sequelize
   .sync({ logging: false })
   .then(() => {
-    logger.info('DB Connection Successful');
+    logger.info('DB Connection Successfully');
     app.listen(config.app.port, () => {
       logger.info(`Listening to port ${config.app.port}`);
     });
