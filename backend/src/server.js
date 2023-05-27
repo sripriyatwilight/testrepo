@@ -26,7 +26,7 @@ app.use('/api/v1', userRoutes);
 sequelize
   .sync({ logging: false })
   .then(() => {
-    logger.info('DB Connection Successfully Test');
+    logger.info('DB Connection Successfullyy');
     app.listen(config.app.port, () => {
       logger.info(`Listening to port ${config.app.port}`);
     });
